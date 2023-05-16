@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<link rel="stylesheet" href="Style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <title>Bodybuilding Website</title>
+    <script>
+      window.addEventListener('DOMContentLoaded', () => {
+      const carouselContainer = document.querySelector('.carousel-container');
+      const prevBtn = document.querySelector('.prev-btn');
+      const nextBtn = document.querySelector('.next-btn');
+      const influencerName = document.querySelector('.influencer-name');
+      const influencerDescription = document.querySelector('.influencer-description');
+
+      let currentIndex = 0;
+      const images = carouselContainer.querySelectorAll('img');
+      const totalImages = images.length;
+
+      const influencerNames = ["Cbum/Chris Bumstead", "Alex Eubank", "Noel Deyzel"];
+      const influencerDescriptions = [
+      "CBum, whose full name is Chris Bumstead, is a well-known bodybuilder and fitness influencer. He gained popularity for his impressive physique and success in competitive bodybuilding. Chris Bumstead is notably recognized for his achievements in the Men's Classic Physique division.",
+      "Alex Eubank's journey as a fitness model was one of a kind. As a young boy, he did not like how his body looked. At sixteen, he decided to consistently start working out and seeing the results prompted him to work even harder because he had always dreamed of being a model and actor. Documenting his workouts worked magic because he created an audience he could monetize. He also created the clothing brand Elysium.",
+      "Noel Deyzel is a South African fitness coach, businessman, social media star, and influencer. He is also well-recognized for being an International Federation of BodyBuilding and Fitness (IFBB) heavyweight bodybuilder. He is also known for his videos on YouTube, TikTok, and Instagram."
+      ];
+
+      function showImage(index) {
+      images.forEach((image, i) => {
+      if (i === index) {
+      image.style.display = 'block';
+    } else {
+      image.style.display = 'none';
+    }
+    });
+
+      influencerName.textContent = influencerNames[index];
+      influencerDescription.textContent = influencerDescriptions[index];
+    }
+
+      function nextImage() {
+      currentIndex++;
+      if (currentIndex >= totalImages) {
+      currentIndex = 0;
+    }
+      showImage(currentIndex);
+    }
+
+      function prevImage() {
+      currentIndex--;
+      if (currentIndex < 0) {
+      currentIndex = totalImages - 1;
+    }
+      showImage(currentIndex);
+    }
+
+      prevBtn.addEventListener('click', prevImage);
+      nextBtn.addEventListener('click', nextImage);
+
+      showImage(currentIndex);
+    });
+  </script>
+
+</head>
+<body>
+
+<header>
+  <nav>
+    <div class="logo">
+      <a href="HomePage.html">A Beginner's Guide to Bodybuilding</a>
+    </div>
+    <ul class="navigation-menu">
+      <li><a href="HomePage.html">Home</a></li>
+      <li><a href="workouts.html">Workouts</a></li>
+      <li><a href="nutrition.html">Nutrition</a></li>
+      <li><a href="supplements.html">Supplements</a></li>
+      <li><a href="influencers.html">Influencers</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="influencers">
+  <h2>Influencers</h2>
+  <div class="carousel">
+    <div class="carousel-container">
+      <img src="cbum.webp" alt="Influencer 1" style="width: 300px" style="height: 450px">
+      <img src="alex.png" alt="Influencer 2" style="width: 300px" style="height: 450px">
+      <img src="noel.jpg" alt="Influencer 3" style="width: 300px" style="height: 450px">
+    </div>
+    <div class="carousel-controls">
+      <button class="prev-btn">&lt;</button>
+      <button class="next-btn">&gt;</button>
+    </div>
+  </div>
+  <div class="image-card">
+    <h3 class="influencer-name">dafdas fasdf</h3>
+    <p class="influencer-description">Saaaaaaaaaaaaaa.</p>
+  </div>
